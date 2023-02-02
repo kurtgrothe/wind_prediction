@@ -5,7 +5,7 @@ import joblib
 import os
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
-filename = 'wine_dt.pkl'
+filename = 'wind.pkl'
 #model = pickle.load(open(filename, 'rb'))
 model = joblib.load(filename)
 
@@ -19,13 +19,15 @@ def index():
 @app.route('/predict', methods=['POST'])
 
 def predict():
-    alcohol = request.form['alcohol']
-    sulphates = request.form['sulphates']
-    citric_acid = request.form['citric_acid']
-    volatile_acidity = request.form['volatile_acidity']
+    RAIN = request.form['RAIN']
+    T_MIN = request.form['T_MIN']
+    T_MAX = request.form['T_MAX']
+    T_MIN_G = request.form['T_MIN_G']
+    IND = request.form['IND']
+    IND_1 = request.form['IND_1']
+    IND_2 = request.form['IND_2']
 
- 
-    pred = model.predict(np.array([[alcohol, sulphates, citric_acid, volatile_acidity]], dtype=float))
+    pred = model.predict(np.array([[RAIN,T_MIN,T_MAX,T_MIN_G,IND,IND_1,IND_2]], dtype=float))
 
     return render_template('index.html', predict=str(pred))
 

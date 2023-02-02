@@ -2,33 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wine Quality</title>
+    <title>Wind Prediction</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>Wine Quality Prediction, docker deployed</h1>
+        <h1>Wind Prediction</h1>
     </header>
     <form action="{{ url_for('predict')}}" method="POST">
         <legend>Please enter the following measurements:</legend>
 
-        <label for="alcohol">Alcohol:</label>
-        <input type="text" name="alcohol" id="alcohol" required>
+        <label for="RAIN">T Min:</label>
+        <input type="text" name="RAIN" id="RAIN" required>
 
-        <label for="sulphates">Sulphates:</label>
-        <input type="text" name="sulphates" id="sulphates" required>
+        <label for="T_MIN">T Min:</label>
+        <input type="text" name="T_MIN" id="T_MIN" required>
 
-        <label for="citric_acid">Citric Acid:</label>
-        <input type="text" name="citric_acid" id="citric_acid" required>
+        <label for="T_MAX">T Max:</label>
+        <input type="text" name="T_MAX" id="T_MAX" required>
 
-        <label for="volatile_acidity">Volatile Acidity:</label>
-        <input type="text" name="volatile_acidity" id="volatile_acidity" required>
+        <label for="T_MIN_G">T Min G:</label>
+        <input type="text" name="T_MIN_G" id="T_MIN_G" required>
+
+        <label for="IND">Ind:</label>
+        <input type="text" name="IND" id="IND" required>
+
+        <label for="IND_1">Ind 1:</label>
+        <input type="text" name="IND_1" id="IND_1" required>
+
+        <label for="IND_2">Ind 2:</label>
+        <input type="text" name="IND_2" id="IND_2" required>
         <br>
         <input type="submit" value="Submit">
    </form>
    <p>{{ predict }}</p>
     <footer>
-        <p>Deployed Docker Image via GitHub Actions</p>
+        <p>Deployed to Heroku via GitHub Actions</p>
         <p>Kurt Grothe, 2023</p>
     </footer>
 </body>

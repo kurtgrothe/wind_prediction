@@ -1,0 +1,58 @@
+# Miscellaneous 
+*.csv
+
+# Github
+.github/
+
+# Git
+.gitignore
+
+# Jupyter
+.jupyter/
+jupyter_notebook_config.py
+.ipynb_checkpoints/
+*.ipynb
+# Python virtual environment
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+env/
+venv/
+*.egg-info
+
+# MacOS
+.DS_Store
+*.swp
+*.swo
+*.DS_Store
+*.AppleDouble
+*.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+Desktop.ini
+*.log
+*.dll
+*.exe
+*.obj
+*.pdb
+*.user
+*.aps
+*.pch
+*.sbr
+*.ncb
+*.suo
+*.tlb
+*.ilk
+*.res
+*.idb
+*.class
