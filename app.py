@@ -28,10 +28,14 @@ class ANN(nn.Module):
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
-filename = 'data\wind.pt'
+filename = 'data/wind.pt'
 input_shape = 7
-model = torch.load(open(filename, 'rb'))
-model_state_dict = torch.load(open(filename, 'rb'))
+# model = torch.load(open(filename, 'rb')) # Docker image does not have GPU
+model = torch.load(open(filename, 'rb'), map_location=torch.device('cpu'))
+# model_state_dict = torch.load(open(filename, 'rb'))
+# Load Model Regardless of GPU or CPU
+model_state_dict = torch.load(open(filename, 'rb'), map_location=torch.device('cpu'))
+
 model = ANN(input_shape)
 model.load_state_dict(model_state_dict)
 
