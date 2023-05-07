@@ -1,8 +1,11 @@
 {
 	"folders": [
-		{
-			"path": "."
-		}
+	  {
+		"path": "C:/Users/root/Desktop/data_science/projects/wind_prediction"
+	  }
 	],
-	"settings": {}
-}
+	"settings": {
+	  "python.pythonPath": "C:/Users/root/Desktop/data_science/projects/wind_prediction/venv/Scripts/python.exe"
+	}
+  }
+  
